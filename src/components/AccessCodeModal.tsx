@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/use-auth";
 import { KeyRound } from "lucide-react";
+import { accessApi } from "@/lib/access-api";
 
 export function AccessCodeModal({ open, onOpenChange }: { open: boolean; onOpenChange: (v: boolean) => void }) {
   const [code, setCode] = useState("");
@@ -15,10 +15,8 @@ export function AccessCodeModal({ open, onOpenChange }: { open: boolean; onOpenC
   const submit = async () => {
     if (!code.trim()) return;
     setLoading(true);
-    const { data, error } = await supabase.rpc("redeem_access_code", { _code: code.trim().toUpperCase() });
     setLoading(false);
-    if (error) { toast.error(error.message); return; }
-    const result = data as { success: boolean; error?: string };
+    const result = await accessApi.redeem({ code: code.trim().toUpperCase() });
     if (!result.success) { toast.error(result.error || "Could not redeem code"); return; }
     toast.success("Full access unlocked!");
     await refresh();

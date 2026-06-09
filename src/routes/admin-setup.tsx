@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Shield, Lock } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { accessApi } from "@/lib/access-api";
 
 export const Route = createFileRoute("/admin-setup")({ component: AdminSetup });
 
@@ -20,15 +21,18 @@ function AdminSetup() {
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
-    supabase.rpc("admin_exists").then(({ data }) => setExists(!!data));
+    accessApi.adminExists().then(({ exists }) => setExists(exists));
   }, []);
 
   const claimAfterAuth = async () => {
-    const { data, error } = await supabase.rpc("claim_admin");
-    if (error) { toast.error(error.message); return false; }
-    const r = data as { success: boolean; error?: string };
-    if (!r.success) { toast.error(r.error || "Could not claim admin"); return false; }
-    return true;
+    try {
+      const r = await accessApi.claimAdmin();
+      if (!r.success) { toast.error(r.error || "Could not claim admin"); return false; }
+      return true;
+    } catch (error: any) {
+      toast.error(error?.message || "Could not claim admin");
+      return false;
+    }
   };
 
   const signUp = async () => {

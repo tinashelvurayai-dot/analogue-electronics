@@ -14,11 +14,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/hooks/use-auth";
 import { useOfflineDetector } from "@/hooks/use-offline";
 
-function RootComponent() {
-  useOfflineDetector();
-  return <Outlet />;
-}
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
