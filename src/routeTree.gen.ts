@@ -9,38 +9,315 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as SignInRouteImport } from './routes/sign-in'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as RequestAccessRouteImport } from './routes/request-access'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as OfflineRouteImport } from './routes/offline'
+import { Route as NotesRouteImport } from './routes/notes'
+import { Route as ExamModeRouteImport } from './routes/exam-mode'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as BookmarksRouteImport } from './routes/bookmarks'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AdminSetupRouteImport } from './routes/admin-setup'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ReviseSetIdRouteImport } from './routes/revise.$setId'
 
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignInRoute = SignInRouteImport.update({
+  id: '/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestAccessRoute = RequestAccessRouteImport.update({
+  id: '/request-access',
+  path: '/request-access',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfflineRoute = OfflineRouteImport.update({
+  id: '/offline',
+  path: '/offline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesRoute = NotesRouteImport.update({
+  id: '/notes',
+  path: '/notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExamModeRoute = ExamModeRouteImport.update({
+  id: '/exam-mode',
+  path: '/exam-mode',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookmarksRoute = BookmarksRouteImport.update({
+  id: '/bookmarks',
+  path: '/bookmarks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSetupRoute = AdminSetupRouteImport.update({
+  id: '/admin-setup',
+  path: '/admin-setup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReviseSetIdRoute = ReviseSetIdRouteImport.update({
+  id: '/revise/$setId',
+  path: '/revise/$setId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/admin-setup': typeof AdminSetupRoute
+  '/auth': typeof AuthRoute
+  '/bookmarks': typeof BookmarksRoute
+  '/dashboard': typeof DashboardRoute
+  '/exam-mode': typeof ExamModeRoute
+  '/notes': typeof NotesRoute
+  '/offline': typeof OfflineRoute
+  '/profile': typeof ProfileRoute
+  '/request-access': typeof RequestAccessRoute
+  '/search': typeof SearchRoute
+  '/sign-in': typeof SignInRoute
+  '/support': typeof SupportRoute
+  '/revise/$setId': typeof ReviseSetIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/admin-setup': typeof AdminSetupRoute
+  '/auth': typeof AuthRoute
+  '/bookmarks': typeof BookmarksRoute
+  '/dashboard': typeof DashboardRoute
+  '/exam-mode': typeof ExamModeRoute
+  '/notes': typeof NotesRoute
+  '/offline': typeof OfflineRoute
+  '/profile': typeof ProfileRoute
+  '/request-access': typeof RequestAccessRoute
+  '/search': typeof SearchRoute
+  '/sign-in': typeof SignInRoute
+  '/support': typeof SupportRoute
+  '/revise/$setId': typeof ReviseSetIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/admin-setup': typeof AdminSetupRoute
+  '/auth': typeof AuthRoute
+  '/bookmarks': typeof BookmarksRoute
+  '/dashboard': typeof DashboardRoute
+  '/exam-mode': typeof ExamModeRoute
+  '/notes': typeof NotesRoute
+  '/offline': typeof OfflineRoute
+  '/profile': typeof ProfileRoute
+  '/request-access': typeof RequestAccessRoute
+  '/search': typeof SearchRoute
+  '/sign-in': typeof SignInRoute
+  '/support': typeof SupportRoute
+  '/revise/$setId': typeof ReviseSetIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/admin-setup'
+    | '/auth'
+    | '/bookmarks'
+    | '/dashboard'
+    | '/exam-mode'
+    | '/notes'
+    | '/offline'
+    | '/profile'
+    | '/request-access'
+    | '/search'
+    | '/sign-in'
+    | '/support'
+    | '/revise/$setId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/admin-setup'
+    | '/auth'
+    | '/bookmarks'
+    | '/dashboard'
+    | '/exam-mode'
+    | '/notes'
+    | '/offline'
+    | '/profile'
+    | '/request-access'
+    | '/search'
+    | '/sign-in'
+    | '/support'
+    | '/revise/$setId'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/admin-setup'
+    | '/auth'
+    | '/bookmarks'
+    | '/dashboard'
+    | '/exam-mode'
+    | '/notes'
+    | '/offline'
+    | '/profile'
+    | '/request-access'
+    | '/search'
+    | '/sign-in'
+    | '/support'
+    | '/revise/$setId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  AdminSetupRoute: typeof AdminSetupRoute
+  AuthRoute: typeof AuthRoute
+  BookmarksRoute: typeof BookmarksRoute
+  DashboardRoute: typeof DashboardRoute
+  ExamModeRoute: typeof ExamModeRoute
+  NotesRoute: typeof NotesRoute
+  OfflineRoute: typeof OfflineRoute
+  ProfileRoute: typeof ProfileRoute
+  RequestAccessRoute: typeof RequestAccessRoute
+  SearchRoute: typeof SearchRoute
+  SignInRoute: typeof SignInRoute
+  SupportRoute: typeof SupportRoute
+  ReviseSetIdRoute: typeof ReviseSetIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-in': {
+      id: '/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-access': {
+      id: '/request-access'
+      path: '/request-access'
+      fullPath: '/request-access'
+      preLoaderRoute: typeof RequestAccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offline': {
+      id: '/offline'
+      path: '/offline'
+      fullPath: '/offline'
+      preLoaderRoute: typeof OfflineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes': {
+      id: '/notes'
+      path: '/notes'
+      fullPath: '/notes'
+      preLoaderRoute: typeof NotesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exam-mode': {
+      id: '/exam-mode'
+      path: '/exam-mode'
+      fullPath: '/exam-mode'
+      preLoaderRoute: typeof ExamModeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bookmarks': {
+      id: '/bookmarks'
+      path: '/bookmarks'
+      fullPath: '/bookmarks'
+      preLoaderRoute: typeof BookmarksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin-setup': {
+      id: '/admin-setup'
+      path: '/admin-setup'
+      fullPath: '/admin-setup'
+      preLoaderRoute: typeof AdminSetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +325,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/revise/$setId': {
+      id: '/revise/$setId'
+      path: '/revise/$setId'
+      fullPath: '/revise/$setId'
+      preLoaderRoute: typeof ReviseSetIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  AdminSetupRoute: AdminSetupRoute,
+  AuthRoute: AuthRoute,
+  BookmarksRoute: BookmarksRoute,
+  DashboardRoute: DashboardRoute,
+  ExamModeRoute: ExamModeRoute,
+  NotesRoute: NotesRoute,
+  OfflineRoute: OfflineRoute,
+  ProfileRoute: ProfileRoute,
+  RequestAccessRoute: RequestAccessRoute,
+  SearchRoute: SearchRoute,
+  SignInRoute: SignInRoute,
+  SupportRoute: SupportRoute,
+  ReviseSetIdRoute: ReviseSetIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
