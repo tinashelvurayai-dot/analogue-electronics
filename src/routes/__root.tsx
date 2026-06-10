@@ -45,9 +45,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Power Study Buddy" },
+      { title: "Analogue Electronics" },
       { name: "description", content: "Flashcard revision platform for power electronics and research methods." },
-      { property: "og:title", content: "Power Study Buddy" },
+      { property: "og:title", content: "Analogue Electronics" },
       { property: "og:description", content: "Study flashcards, notes, access codes, agents, and admin tools." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

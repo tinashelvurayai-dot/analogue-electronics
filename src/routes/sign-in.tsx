@@ -71,7 +71,7 @@ function SignInPage() {
           <ArrowLeft className="h-4 w-4 mr-1" /> Back
         </Link>
         <Link to="/" className="flex justify-center mb-6">
-          <img src={logo} alt="Power Electronics 1" className="h-16" />
+          <img src={logo} alt="Analogue Electronics 1" className="h-16" />
         </Link>
         <h1 className="text-2xl font-bold text-center">Sign in</h1>
         <p className="text-sm text-muted-foreground text-center mt-1">
