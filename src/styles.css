@@ -59,6 +59,10 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --background-image-hero: var(--gradient-hero);
+  --background-image-brand-gradient: var(--gradient-brand);
+  --shadow-glow: var(--shadow-glow-value);
+  --shadow-card-elev: var(--shadow-card-elev-value);
 }
 
 :root {
@@ -131,6 +135,41 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
+
+/* Force dark blue theme app-wide */
+html, :root {
+  color-scheme: dark;
+  --background: oklch(0.16 0.05 265);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.22 0.06 265);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.22 0.06 265);
+  --popover-foreground: oklch(0.98 0.005 250);
+  --primary: oklch(0.65 0.18 260);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.72 0.18 240);
+  --secondary-foreground: oklch(0.15 0.03 260);
+  --muted: oklch(0.26 0.05 265);
+  --muted-foreground: oklch(0.72 0.03 255);
+  --accent: oklch(0.30 0.08 265);
+  --accent-foreground: oklch(0.98 0.005 250);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.65 0.18 260);
+  --gradient-hero: radial-gradient(1200px 600px at 50% -10%, oklch(0.32 0.12 265 / 0.55), transparent 60%), linear-gradient(180deg, oklch(0.12 0.05 265) 0%, oklch(0.09 0.04 265) 100%);
+  --gradient-brand: linear-gradient(135deg, oklch(0.65 0.20 250), oklch(0.62 0.22 295));
+  --shadow-glow-value: 0 0 60px oklch(0.65 0.20 260 / 0.45);
+  --shadow-card-elev-value: 0 18px 50px -20px oklch(0.10 0.05 265 / 0.7);
+}
+
+@utility bg-hero { background-image: var(--gradient-hero); background-color: oklch(0.10 0.04 265); }
+@utility bg-brand-gradient { background-image: var(--gradient-brand); }
+@utility text-brand-gradient { background-image: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@utility shadow-glow { box-shadow: var(--shadow-glow-value); }
+@utility shadow-card-elev { box-shadow: var(--shadow-card-elev-value); }
+@utility font-display { font-family: ui-sans-serif, system-ui, "Inter", sans-serif; letter-spacing: -0.02em; }
 
 @layer base {
   * {
