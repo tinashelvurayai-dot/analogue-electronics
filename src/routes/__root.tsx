@@ -46,7 +46,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Analogue Electronics" },
-      { name: "description", content: "Flashcard revision platform for power electronics and research methods." },
+      { name: "description", content: "Flashcard revision platform for analogue electronics and research methods." },
       { property: "og:title", content: "Analogue Electronics" },
       { property: "og:description", content: "Study flashcards, notes, access codes, agents, and admin tools." },
       { property: "og:type", content: "website" },
