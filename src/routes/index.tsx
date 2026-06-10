@@ -47,12 +47,12 @@ function Landing() {
           </div>
           <img
             src={logo}
-            alt="Power Electronics 1 logo"
+            alt="Analogue Electronics 1 logo"
             onClick={handleLogoTap}
             className="mx-auto h-28 w-auto mb-6 drop-shadow-[0_0_60px_rgba(99,102,241,0.55)] cursor-pointer select-none"
           />
           <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight leading-tight text-white">
-            Master Power Electronics.<br />
+            Master Analogue Electronics.<br />
             <span className="text-brand-gradient">Ace your exam with confidence.</span>
           </h1>
           <p className="mt-5 max-w-2xl mx-auto text-lg text-white/80">
@@ -95,7 +95,7 @@ function Landing() {
           <Card className="p-8 md:p-12 bg-card text-card-foreground shadow-card-elev">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Power Electronics concepts tested year after year.</h2>
+                <h2 className="text-3xl font-bold mb-4">Analogue Electronics concepts tested year after year.</h2>
                 <p className="text-muted-foreground">
                   Thyristors, diodes, and rectifiers. Gate triggering and commutation. DC-DC and AC-DC conversion.
                   Thermal management and snubber design. Protection circuits. The same exam-tested topics delivered in exam format.
@@ -241,7 +241,7 @@ function Landing() {
         </section>
       </main>
       <footer className="border-t border-border/40 mt-6 py-8 text-center text-sm text-white/60">
-        © Power Electronics 1. Master the circuit. Control the power. Ace the exam.
+        © Analogue Electronics 1. Master the circuit. Control the power. Ace the exam.
       </footer>
     </div>
   );

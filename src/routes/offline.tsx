@@ -11,7 +11,7 @@ function OfflinePage() {
     <div className="min-h-screen bg-hero flex flex-col items-center justify-center p-4">
       <Card className="w-full max-w-md p-8 bg-card text-card-foreground shadow-card-elev text-center">
         <div className="flex justify-center mb-6">
-          <img src={logo} alt="Power Electronics 1" className="h-16" />
+          <img src={logo} alt="Analogue Electronics 1" className="h-16" />
         </div>
         
         <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-amber-500/20 border border-amber-500/30 mx-auto mb-4">

@@ -34,7 +34,7 @@ export function AppHeader({ showBack = false, backTo = "/" }: { showBack?: boole
             </Button>
           )}
           <Link to="/" onClick={onLogo} className="flex items-center gap-3 select-none">
-            <img src={logo} alt="Power Electronics 1" className="h-10 w-auto" draggable={false} />
+            <img src={logo} alt="Analogue Electronics 1" className="h-10 w-auto" draggable={false} />
           </Link>
         </div>
         <nav className="flex items-center gap-1 flex-wrap justify-end">
