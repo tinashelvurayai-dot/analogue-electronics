@@ -44,7 +44,7 @@ export function DeploymentPanel() {
           <CopyRow label="VITE_SUPABASE_PUBLISHABLE_KEY" value={SUPABASE_ANON} />
         </div>
         <p className="text-xs text-muted-foreground mt-2">
-          Vercel only hosts the static frontend — no server runtime. All sensitive logic (admin approve, email, signin)
+          Vercel only hosts the static frontend - no server runtime. All sensitive logic (admin approve, email, signin)
           runs in Supabase Edge Functions, which already have <code>SUPABASE_SERVICE_ROLE_KEY</code> set automatically.
         </p>
       </div>
@@ -55,7 +55,7 @@ export function DeploymentPanel() {
           Set these in <strong>Supabase Dashboard → Project Settings → Edge Functions → Secrets</strong>:
         </p>
         <div className="space-y-2">
-          <CopyRow label="RESEND_API_KEY (optional — enables emailing access codes)" value="re_••••••••••••" />
+          <CopyRow label="RESEND_API_KEY (optional - enables emailing access codes)" value="re_••••••••••••" />
         </div>
         <p className="text-xs text-muted-foreground mt-2">
           For reference, the service-role key (used internally by edge functions, do NOT put in Vercel):
@@ -72,7 +72,7 @@ export function DeploymentPanel() {
           <li>Paste the two <code>VITE_*</code> env vars above into Vercel.</li>
           <li>Click Deploy. Add your custom domain under Settings → Domains.</li>
           <li>In Supabase Dashboard → Authentication → URL Configuration, add your Vercel domain to <strong>Site URL</strong> and <strong>Redirect URLs</strong>.</li>
-          <li>Deploy edge functions (one-time): <code>supabase functions deploy access-submit access-signin access-approve access-resend access-reject</code> — or the Lovable platform has already done this.</li>
+          <li>Deploy edge functions (one-time): <code>supabase functions deploy access-submit access-signin access-approve access-resend access-reject</code> - or the Lovable platform has already done this.</li>
         </ol>
       </div>
 
@@ -110,9 +110,9 @@ export function UserManualPanel() {
           <AccordionContent className="space-y-2 text-sm">
             <p>Users who can't pay submit a request via the public Request Access page. You see them in the <strong>Access Requests</strong> tab.</p>
             <ul className="list-disc pl-5 space-y-1">
-              <li><strong>Approve</strong> — generates an access code + synthetic email/password and emails it (if email config is set up).</li>
-              <li><strong>Reject</strong> — marks the request denied.</li>
-              <li><strong>Resend email</strong> — re-sends credentials if the user lost them.</li>
+              <li><strong>Approve</strong> - generates an access code + synthetic email/password and emails it (if email config is set up).</li>
+              <li><strong>Reject</strong> - marks the request denied.</li>
+              <li><strong>Resend email</strong> - re-sends credentials if the user lost them.</li>
             </ul>
           </AccordionContent>
         </AccordionItem>
@@ -129,7 +129,7 @@ export function UserManualPanel() {
           <AccordionTrigger>4. Content (Topics & Cards)</AccordionTrigger>
           <AccordionContent className="space-y-2 text-sm">
             <p>Create topic sets (title, description, free card limit, order). Inside each set add cards with question + answer.</p>
-            <p><strong>Bulk import</strong>: paste Markdown using <code>Q:</code> / <code>A:</code> labels — asterisks and numbering are stripped automatically. Diagrams and tables preserved.</p>
+            <p><strong>Bulk import</strong>: paste Markdown using <code>Q:</code> / <code>A:</code> labels - asterisks and numbering are stripped automatically. Diagrams and tables preserved.</p>
             <p>Use fenced <code>```diagram closed-loop```</code> blocks to render real SVG diagrams in answers. Available: <code>closed-loop, dcs-pyramid, pneumatic-valve, butterfly-valve, bode, nyquist, root-locus, plc-architecture</code>.</p>
             <p>LaTeX math: wrap with <code>$inline$</code> or <code>$$block$$</code>.</p>
           </AccordionContent>
@@ -145,7 +145,7 @@ export function UserManualPanel() {
         <AccordionItem value="tickets">
           <AccordionTrigger>6. Messages (Support)</AccordionTrigger>
           <AccordionContent className="space-y-2 text-sm">
-            <p>Users send support messages from the Support page. Reply inline — replies are saved on the ticket.</p>
+            <p>Users send support messages from the Support page. Reply inline - replies are saved on the ticket.</p>
           </AccordionContent>
         </AccordionItem>
 

@@ -17,7 +17,7 @@ export function ShareQRDialog({ trigger, className }: Props) {
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(url);
-      toast.success("Link copied — paste it anywhere");
+      toast.success("Link copied - paste it anywhere");
     } catch {
       toast.error("Could not copy");
     }
