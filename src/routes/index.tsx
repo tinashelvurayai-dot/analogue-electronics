@@ -159,7 +159,7 @@ function Landing() {
                 <p className="text-sm uppercase tracking-wider text-secondary">Pair (sign up together)</p>
                 <p className="text-5xl font-bold mt-2">${pair}<span className="text-base font-medium text-muted-foreground">/month</span></p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Two users, registered together. Share the cost — both get a full month of access.
+                  Two users, registered together. Share the cost - both get a full month of access.
                 </p>
               </div>
             </div>
