@@ -39,7 +39,7 @@ function Support() {
       <main className="container mx-auto px-4 py-10 max-w-2xl">
         <Card className="p-6 bg-card text-card-foreground">
           <h2 className="text-2xl font-bold">Support</h2>
-          <p className="text-sm text-muted-foreground mt-1 mb-6">Email: industrialautomation@gmail.com</p>
+          <p className="text-sm text-muted-foreground mt-1 mb-6">Email: examgeniuspro@gmail.com</p>
           <div className="space-y-3">
             <div><Label>Subject</Label><Input value={subject} onChange={e => setSubject(e.target.value)} maxLength={120} /></div>
             <div><Label>Message</Label><Textarea value={message} rows={6} onChange={e => setMessage(e.target.value)} maxLength={2000} /></div>
