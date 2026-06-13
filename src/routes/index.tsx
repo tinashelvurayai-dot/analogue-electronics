@@ -45,6 +45,12 @@ function Landing() {
           <div className="inline-flex items-center gap-2 rounded-full border border-secondary/40 bg-secondary/10 px-3 py-1 text-xs text-secondary mb-6">
             <Zap className="h-3 w-3" /> Built from real National Diploma past papers
           </div>
+          <p className="font-serif italic text-amber-200/90 text-base md:text-lg mb-3 tracking-wide">
+            « La dolce revisione&nbsp;- studiare come un&rsquo;arte. »
+          </p>
+          <p className="text-xs uppercase tracking-[0.35em] text-amber-300/70 mb-6">
+            Un&rsquo;edizione artigianale &middot; Italian-crafted study experience
+          </p>
           <img
             src={logo}
             alt="Analogue Electronics 1 logo"
@@ -70,7 +76,7 @@ function Landing() {
 
           </div>
           <div className="mt-6 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs text-white/70">
-            <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-secondary" /> No subscription</span>
+            <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-secondary" /> Cancel anytime</span>
             <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-secondary" /> No exam dates, ever</span>
             <span className="flex items-center gap-1"><CheckCircle2 className="h-3 w-3 text-secondary" /> Works offline once installed</span>
           </div>
