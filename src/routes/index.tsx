@@ -129,7 +129,7 @@ function Landing() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { i: Sparkles, t: "1. Request access", d: "Enter your full name and WhatsApp number. Admin approves your request." },
-              { i: KeyRound, t: "2. Pay an agent", d: `Hand over $${solo} (solo) or $${pair} (two of you together) to an authorised agent. Agent notifies admin after payment.` },
+              { i: KeyRound, t: "2. Pay your monthly fee", d: `Hand over $${solo}/month (solo) or $${pair}/month (two of you together) to an authorised agent. Agent notifies admin after payment.` },
               { i: Cpu, t: "3. Get access code", d: "Admin sends your access code via agent or WhatsApp. Sign in with your full name + code, every card unlocks. Install to your phone and revise offline." },
             ].map(({ i: Icon, t, d }) => (
               <Card key={t} className="p-6 bg-card text-card-foreground shadow-card-elev hover:border-secondary transition border-2 border-transparent">
@@ -147,23 +147,23 @@ function Landing() {
         <section className="container mx-auto px-4 py-12">
           <Card className="p-10 bg-card text-card-foreground shadow-card-elev">
             <h2 className="text-3xl font-bold text-center">Cheaper than a rewrite.</h2>
-            <p className="text-center text-muted-foreground mt-2">Pay once. Keep access till end of exam. No monthly anything.</p>
+            <p className="text-center text-muted-foreground mt-2">Simple monthly access. Cancel anytime. Renew only if you still need it.</p>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <div className="rounded-xl border-2 border-border p-6 text-center">
                 <p className="text-sm uppercase tracking-wider text-muted-foreground">Solo</p>
-                <p className="text-5xl font-bold mt-2">${solo}</p>
-                <p className="text-sm text-muted-foreground mt-2">One individual, full access</p>
+                <p className="text-5xl font-bold mt-2">${solo}<span className="text-base font-medium text-muted-foreground">/month</span></p>
+                <p className="text-sm text-muted-foreground mt-2">One individual, full access for the month</p>
               </div>
               <div className="rounded-xl border-2 border-secondary p-6 text-center bg-secondary/5 relative">
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs bg-secondary text-secondary-foreground px-2 py-0.5 rounded-full font-semibold">BEST VALUE</span>
                 <p className="text-sm uppercase tracking-wider text-secondary">Pair (sign up together)</p>
-                <p className="text-5xl font-bold mt-2">${pair}</p>
+                <p className="text-5xl font-bold mt-2">${pair}<span className="text-base font-medium text-muted-foreground">/month</span></p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Two new users, registered together. Save together when you sign up as a pair.
+                  Two users, registered together. Share the cost — both get a full month of access.
                 </p>
               </div>
             </div>
-            <p className="text-center mt-6 text-sm text-muted-foreground">Pay any authorised agent in cash. No card. No online payment.</p>
+            <p className="text-center mt-6 text-sm text-muted-foreground">Pay any authorised agent in cash every month. No card. No online payment.</p>
             <div className="mt-6 rounded-lg border border-secondary/40 bg-secondary/5 p-4 flex items-center justify-center gap-2 text-sm text-center">
               <UserCheck className="h-4 w-4 text-secondary shrink-0" />
               {agent ? (
@@ -187,7 +187,7 @@ function Landing() {
             {[
               { i: BookOpen, t: "Real exam content", d: "Five full past paper sets, model answers verified." },
               { i: Download, t: "Install on phone", d: "Add to home screen, revise even offline." },
-              { i: Mail, t: "Real human support", d: "powerelectronics1@gmail.com" },
+              { i: Mail, t: "Real human support", d: "examgeniuspro@gmail.com" },
             ].map(({ i: Icon, t, d }) => (
               <Card key={t} className="p-4 bg-card text-card-foreground">
                 <Icon className="h-5 w-5 text-secondary mb-2" />
