@@ -68,8 +68,8 @@ function RequestAccessPage() {
             <CheckCircle2 className="h-12 w-12 text-secondary mx-auto" />
             <h2 className="text-2xl font-bold">Request received</h2>
             <p className="text-sm text-muted-foreground">
-              Now pay an authorised agent in cash ($5 solo / $8 pair). The agent will notify admin
-              with your name. Once admin confirms payment, your <strong>access code will be sent via WhatsApp</strong>. Come back here and sign in with your full name + code.
+              Now pay an authorised agent in cash ($5/month solo or $8/month pair). The agent will notify admin
+              with your name. Once admin confirms your monthly payment, your <strong>access code will be sent via WhatsApp</strong>. Come back here and sign in with your full name + code.
             </p>
             <Button onClick={() => nav({ to: "/sign-in" })} className="bg-brand-gradient w-full">
               Go to sign in
