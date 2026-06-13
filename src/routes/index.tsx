@@ -213,6 +213,11 @@ function Landing() {
               { name: "Tariro M.", badge: "+27%", quote: "Smashed two mock papers in a weekend. The AI tutor is unreal." },
               { name: "Bongani K.", badge: "Top 5%", quote: "Finally understood PID tuning. Worth way more than $3." },
               { name: "Aisha R.", badge: "Distinction", quote: "Past papers + practice in one place. Saved my finals." },
+            { name: "Tendai N.", badge: "+31%", quote: "Question-first cards forced me to actually think. Game changer." },
+            { name: "Chiedza S.", badge: "Top 10%", quote: "The LaTeX formulas render beautifully. Felt like a real textbook." },
+            { name: "Kuda M.", badge: "Pass", quote: "Installed it on my phone and revised on the kombi. Worth every cent." },
+            { name: "Rumbi T.", badge: "+22%", quote: "Diodes and rectifiers finally clicked. Wish I had this last semester." },
+            { name: "Farai D.", badge: "Distinction", quote: "Cheaper than a single textbook. Smarter than any group chat." },
             ].map((t) => (
               <Card key={t.name} className="p-6 bg-card text-card-foreground shadow-card-elev">
                 <div className="flex items-center justify-between mb-3">
@@ -244,6 +249,9 @@ function Landing() {
           <Button asChild size="lg" className="mt-6 bg-brand-gradient text-primary-foreground shadow-glow">
             <Link to="/request-access">Request Access</Link>
           </Button>
+          <p className="font-serif italic text-amber-200/70 mt-6 text-sm">
+            « Il sapere è il pane dell&rsquo;anima. » <span className="not-italic text-white/40">- proverbio italiano</span>
+          </p>
         </section>
       </main>
       <footer className="border-t border-border/40 mt-6 py-8 text-center text-sm text-white/60">
