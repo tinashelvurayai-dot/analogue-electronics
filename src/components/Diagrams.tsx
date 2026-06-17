@@ -91,7 +91,7 @@ export function OpenLoopDiagram() {
       <Arrow x1="200" y1="100" x2="260" y2="100" label="u(t)" />
       <Block x={260} y={80} w={140} h={40} label="Plant / Process" />
       <Arrow x1="400" y1="100" x2="480" y2="100" label="y(t)" />
-      <text x="300" y="170" textAnchor="middle" fill={muted} fontSize="11">No feedback — output not measured or compared to setpoint.</text>
+      <text x="300" y="170" textAnchor="middle" fill={muted} fontSize="11">No feedback - output not measured or compared to setpoint.</text>
     </>,
     "0 0 600 200", "Open-loop control"
   );
@@ -99,11 +99,11 @@ export function OpenLoopDiagram() {
 
 export function DcsPyramidDiagram() {
   const levels = [
-    { w: 520, label: "Level 0 — Field devices (sensors, actuators)" },
-    { w: 440, label: "Level 1 — PLC / DCS controllers" },
-    { w: 360, label: "Level 2 — SCADA / HMI (supervisory)" },
-    { w: 280, label: "Level 3 — MES (manufacturing execution)" },
-    { w: 200, label: "Level 4 — ERP (business / planning)" },
+    { w: 520, label: "Level 0 - Field devices (sensors, actuators)" },
+    { w: 440, label: "Level 1 - PLC / DCS controllers" },
+    { w: 360, label: "Level 2 - SCADA / HMI (supervisory)" },
+    { w: 280, label: "Level 3 - MES (manufacturing execution)" },
+    { w: 200, label: "Level 4 - ERP (business / planning)" },
   ];
   return wrap(
     <>
@@ -311,7 +311,7 @@ export function Diagram({ name }: { name: string }) {
   if (!Comp) {
     return (
       <div className="my-3 rounded border border-dashed border-border p-3 text-sm text-muted-foreground">
-        Unknown diagram: <code>{name}</code> — available:{" "}
+        Unknown diagram: <code>{name}</code> - available:{" "}
         {Object.keys(REGISTRY).join(", ")}
       </div>
     );
