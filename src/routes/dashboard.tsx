@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Unlock, BookOpen, Sparkles, ArrowRight, UserCheck, Star, Search, Flame, Zap, Target, ShieldCheck } from "lucide-react";
+import { Unlock, BookOpen, Sparkles, ArrowRight, UserCheck, Star, Search, Flame, Zap, Target, ShieldCheck, MapPin, MessageCircle } from "lucide-react";
 import { useBookmarks, useMastery, summariseMastery } from "@/hooks/use-study-state";
 
 export const Route = createFileRoute("/dashboard")({ component: Dashboard });
@@ -98,6 +98,23 @@ function Dashboard() {
               </span>
             </div>
           )}
+          <div className="mt-3 flex flex-wrap items-center gap-2 rounded-md border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-sm text-white">
+            <span className="inline-flex items-center gap-1 text-xs uppercase tracking-wide text-emerald-300 font-semibold">
+              <MapPin className="h-3.5 w-3.5" /> Agent Displayed Based On Location
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/50 bg-emerald-500/20 px-2.5 py-1 text-[11px] font-semibold text-emerald-200">
+              <ShieldCheck className="h-3.5 w-3.5" /> Verified ZIM Agent
+            </span>
+            <span className="font-medium">Tinashe Lee Vurayai</span>
+            <a
+              href="https://wa.me/263713043376"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 hover:bg-emerald-700 px-3 py-1 text-xs font-semibold text-white"
+            >
+              <MessageCircle className="h-3.5 w-3.5" /> Chat with Zim Agent · +263 71 3043 376
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-col gap-4 mb-8">

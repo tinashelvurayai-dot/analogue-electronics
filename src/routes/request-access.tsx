@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { accessApi } from "@/lib/access-api";
-import { ArrowLeft, UserPlus, CheckCircle2, UserCheck, ShieldCheck } from "lucide-react";
+import { ArrowLeft, UserPlus, CheckCircle2, UserCheck, ShieldCheck, MessageCircle, AlertCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -67,6 +67,20 @@ function RequestAccessPage() {
           <div className="text-center space-y-4">
             <CheckCircle2 className="h-12 w-12 text-secondary mx-auto" />
             <h2 className="text-2xl font-bold">Request received</h2>
+            <div className="rounded-md border border-amber-400/40 bg-amber-400/10 p-3 text-left text-sm space-y-2">
+              <div className="flex items-start gap-2">
+                <AlertCircle className="h-4 w-4 text-amber-500 mt-0.5 shrink-0" />
+                <span>Due to the inaccessibility of PayPal in Zimbabwe you shall make payments via the verified agent in Zimbabwe. Then receive your Access Code.</span>
+              </div>
+              <a
+                href="https://wa.me/263713043376"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 text-xs font-semibold"
+              >
+                <MessageCircle className="h-3.5 w-3.5" /> Chat with Zim Agent · +263 71 3043 376
+              </a>
+            </div>
             <p className="text-sm text-muted-foreground">
               Now pay an authorised agent in cash ($5/month solo or $8/month pair). The agent will notify admin
               with your name. Once admin confirms your monthly payment, your <strong>access code will be sent via WhatsApp</strong>. Come back here and sign in with your full name + code.
