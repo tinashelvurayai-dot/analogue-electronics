@@ -12,10 +12,11 @@ async function callFunction<T>(name: string, body: Record<string, unknown>): Pro
 }
 
 export const accessApi = {
-  submit: async (input: { full_name: string; whatsapp: string }) => {
+  submit: async (input: { full_name: string; whatsapp: string; email?: string }) => {
     const { error } = await supabase.from("access_requests").insert({
       full_name: clean(input.full_name),
       whatsapp: clean(input.whatsapp),
+      email: input.email ? clean(input.email) : null,
       status: "pending",
     });
     if (error) throw new Error(error.message);
