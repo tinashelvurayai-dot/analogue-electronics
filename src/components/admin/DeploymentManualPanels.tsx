@@ -4,11 +4,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { toast } from "sonner";
 import { Copy, ExternalLink, Rocket, BookOpen } from "lucide-react";
 
-// PLACEHOLDER: Replace with your actual Supabase credentials
-const SUPABASE_URL = "https://your-project.supabase.co";
-const SUPABASE_ANON = "YOUR_SUPABASE_ANON_KEY";
-const SUPABASE_SERVICE_ROLE_KEY = "YOUR_SUPABASE_SERVICE_ROLE_KEY";
-const PROJECT_ID = "your-project-id";
+// Real values pulled from the running app's env so admins can copy them straight into Vercel.
+const SUPABASE_URL = (import.meta as any).env?.VITE_SUPABASE_URL ?? "";
+const SUPABASE_ANON = (import.meta as any).env?.VITE_SUPABASE_PUBLISHABLE_KEY ?? "";
+const PROJECT_ID = (import.meta as any).env?.VITE_SUPABASE_PROJECT_ID ?? "";
 
 function CopyRow({ label, value, secret }: { label: string; value: string; secret?: boolean }) {
   return (
@@ -58,9 +57,8 @@ export function DeploymentPanel() {
           <CopyRow label="RESEND_API_KEY (optional - enables emailing access codes)" value="re_••••••••••••" />
         </div>
         <p className="text-xs text-muted-foreground mt-2">
-          For reference, the service-role key (used internally by edge functions, do NOT put in Vercel):
+          The service-role key is auto-injected into edge functions by Lovable Cloud - never copy it into Vercel and never expose it client-side.
         </p>
-        <div className="mt-2"><CopyRow label="SUPABASE_SERVICE_ROLE_KEY" value={SUPABASE_SERVICE_ROLE_KEY} /></div>
       </div>
 
       <div className="space-y-2">

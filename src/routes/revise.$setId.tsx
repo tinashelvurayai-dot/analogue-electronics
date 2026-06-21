@@ -10,6 +10,7 @@ import { ChevronLeft, ChevronRight, ArrowLeft, Lock, RotateCw, Star, ThumbsUp, A
 import { useScreenshotProtection } from "@/hooks/use-screenshot-protection";
 import { RichContent } from "@/components/RichContent";
 import { useBookmarks, useMastery, summariseMastery } from "@/hooks/use-study-state";
+import { ReadAloudButton } from "@/components/ReadAloudButton";
 
 export const Route = createFileRoute("/revise/$setId")({ component: Revise });
 
@@ -40,6 +41,7 @@ function Revise() {
             .from("cards")
             .select("*")
             .eq("topic_set_id", setId)
+            .eq("is_exam_only", false)
             .order("order_index")
             .limit(1000) // Prevent loading excessive cards
         ]);
@@ -139,6 +141,7 @@ function Revise() {
                     {flipped ? "📌 Answer" : "❓ Question"}
                   </Badge>
                   <div className="flex items-center gap-1">
+                    <ReadAloudButton text={flipped ? card.answer : card.question} />
                     <Button
                       variant="ghost"
                       size="sm"

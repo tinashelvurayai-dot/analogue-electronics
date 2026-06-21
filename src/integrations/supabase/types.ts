@@ -178,6 +178,7 @@ export type Database = {
           created_at: string
           difficulty: string
           id: string
+          is_exam_only: boolean
           order_index: number
           question: string
           topic_set_id: string
@@ -187,6 +188,7 @@ export type Database = {
           created_at?: string
           difficulty?: string
           id?: string
+          is_exam_only?: boolean
           order_index?: number
           question: string
           topic_set_id: string
@@ -196,6 +198,7 @@ export type Database = {
           created_at?: string
           difficulty?: string
           id?: string
+          is_exam_only?: boolean
           order_index?: number
           question?: string
           topic_set_id?: string

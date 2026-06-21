@@ -16,6 +16,7 @@ function RequestAccessPage() {
   const nav = useNavigate();
   const [full_name, setName] = useState("");
   const [whatsapp, setWa] = useState("");
+  const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [agentName, setAgentName] = useState<string>("Contact admin for agent details");
@@ -29,6 +30,7 @@ function RequestAccessPage() {
     const { error } = await supabase.from("access_requests").insert({
       full_name: full_name.trim(),
       whatsapp: whatsapp.trim(),
+      email: email.trim() || null,
     });
     if (error) throw error;
   };
@@ -40,7 +42,7 @@ function RequestAccessPage() {
     setBusy(true);
     try {
       try {
-        await accessApi.submit({ full_name, whatsapp });
+        await accessApi.submit({ full_name, whatsapp, email: email.trim() || undefined });
       } catch {
         await submitDirect();
       }
@@ -117,6 +119,19 @@ function RequestAccessPage() {
                   placeholder="+263 7X XXX XXXX"
                   maxLength={40}
                 />
+              </div>
+              <div>
+                <Label>Email (optional)</Label>
+                <Input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  maxLength={120}
+                />
+                <p className="text-xs text-muted-foreground mt-1">
+                  We'll also send your access code here if WhatsApp delivery fails.
+                </p>
               </div>
               <Button onClick={send} disabled={busy} className="w-full bg-brand-gradient">
                 <UserPlus className="h-4 w-4 mr-2" /> {busy ? "Submitting…" : "Submit request"}
