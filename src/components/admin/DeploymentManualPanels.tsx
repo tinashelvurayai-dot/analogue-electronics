@@ -4,11 +4,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { toast } from "sonner";
 import { Copy, ExternalLink, Rocket, BookOpen } from "lucide-react";
 
-// PLACEHOLDER: Replace with your actual Supabase credentials
-const SUPABASE_URL = "https://your-project.supabase.co";
-const SUPABASE_ANON = "YOUR_SUPABASE_ANON_KEY";
-const SUPABASE_SERVICE_ROLE_KEY = "YOUR_SUPABASE_SERVICE_ROLE_KEY";
-const PROJECT_ID = "your-project-id";
+// Real values pulled from the running app's env so admins can copy them straight into Vercel.
+const SUPABASE_URL = (import.meta as any).env?.VITE_SUPABASE_URL ?? "";
+const SUPABASE_ANON = (import.meta as any).env?.VITE_SUPABASE_PUBLISHABLE_KEY ?? "";
+const PROJECT_ID = (import.meta as any).env?.VITE_SUPABASE_PROJECT_ID ?? "";
 
 function CopyRow({ label, value, secret }: { label: string; value: string; secret?: boolean }) {
   return (
