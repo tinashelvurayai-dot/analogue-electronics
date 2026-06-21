@@ -1,0 +1,2 @@
+ALTER TABLE public.cards ADD COLUMN IF NOT EXISTS is_exam_only boolean NOT NULL DEFAULT false;
+CREATE INDEX IF NOT EXISTS cards_is_exam_only_idx ON public.cards(is_exam_only) WHERE is_exam_only = true;
