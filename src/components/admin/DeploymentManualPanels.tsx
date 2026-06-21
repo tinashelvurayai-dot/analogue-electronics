@@ -57,9 +57,8 @@ export function DeploymentPanel() {
           <CopyRow label="RESEND_API_KEY (optional - enables emailing access codes)" value="re_••••••••••••" />
         </div>
         <p className="text-xs text-muted-foreground mt-2">
-          For reference, the service-role key (used internally by edge functions, do NOT put in Vercel):
+          The service-role key is auto-injected into edge functions by Lovable Cloud - never copy it into Vercel and never expose it client-side.
         </p>
-        <div className="mt-2"><CopyRow label="SUPABASE_SERVICE_ROLE_KEY" value={SUPABASE_SERVICE_ROLE_KEY} /></div>
       </div>
 
       <div className="space-y-2">
