@@ -41,6 +41,7 @@ function Revise() {
             .from("cards")
             .select("*")
             .eq("topic_set_id", setId)
+            .eq("is_exam_only", false)
             .order("order_index")
             .limit(1000) // Prevent loading excessive cards
         ]);
