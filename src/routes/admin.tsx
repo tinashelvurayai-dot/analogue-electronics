@@ -324,6 +324,7 @@ function ContentPanel() {
   const [newSetDesc, setNewSetDesc] = useState("");
   const [editing, setEditing] = useState<string | null>(null);
   const [editQ, setEditQ] = useState(""); const [editA, setEditA] = useState("");
+  const [examOnly, setExamOnly] = useState(false);
 
   const loadSets = async () => {
     const { data } = await supabase.from("topic_sets").select("*").order("order_index");
@@ -347,9 +348,9 @@ function ContentPanel() {
   const addCard = async () => {
     if (!q.trim() || !a.trim()) return;
     const order = cards.length + 1;
-    const { error } = await supabase.from("cards").insert({ topic_set_id: activeSet, question: q, answer: a, order_index: order });
+    const { error } = await supabase.from("cards").insert({ topic_set_id: activeSet, question: q, answer: a, order_index: order, is_exam_only: examOnly } as any);
     if (error) return toast.error(error.message);
-    toast.success("Card added"); setQ(""); setA(""); loadCards();
+    toast.success(examOnly ? "Card added (exam-only)" : "Card added"); setQ(""); setA(""); loadCards();
   };
 
   const delCard = async (id: string) => {
@@ -423,6 +424,10 @@ function ContentPanel() {
         <div className="space-y-2">
           <div><Label>Question</Label><textarea value={q} onChange={e => setQ(e.target.value)} rows={2} className="w-full rounded-md border border-input bg-background text-foreground p-2 text-sm" /></div>
           <div><Label>Answer</Label><textarea value={a} onChange={e => setA(e.target.value)} rows={5} className="w-full rounded-md border border-input bg-background text-foreground p-2 text-sm font-mono" /></div>
+          <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
+            <input type="checkbox" checked={examOnly} onChange={e => setExamOnly(e.target.checked)} className="h-4 w-4 accent-purple-600" />
+            <span>Exam-only card <span className="text-muted-foreground">(shows in Exam Mode, hidden from topic revision)</span></span>
+          </label>
           <Button onClick={addCard} className="bg-brand-gradient"><Plus className="h-4 w-4 mr-1" /> Add card</Button>
         </div>
       </Card>
